@@ -42,6 +42,7 @@ SRC	=	$(PATH_LIBMY)my_compute_power_rec.c	\
 		$(PATH_LIBMY)my_strncat.c	\
 		$(PATH_LIBMY)my_strncpy.c	\
 		$(PATH_LIBMY)my_swap.c	\
+		$(PATH_SRC)add.c	\
 		$(PATH_SRC)organized_utils.c	\
 		$(PATH_SRC)temp.c	\
 		$(PATH_SRC)main.c
