@@ -8,24 +8,19 @@
 #ifndef ORGANIZED
     #define ORGANIZED
 
-typedef enum {
-    ACTUATOR,
-    DEVICE,
-    PROCESSOR,
-    SENSOR,
-    WIRE,
-    NB_TYPES
-} hardware_type_t;
-
-typedef struct hardware_s {
-    int id;
-    hardware_type_t type;
+typedef struct s_hardware {
+    char *type;
     char *name;
-    struct hardware_s *next;
+    int id;
 } hardware_t;
 
-typedef struct workshop_s {
-    hardware_t *list;
+typedef struct s_linked_list {
+    void *data;
+    struct s_linked_list *next;
+} linked_list_t;
+
+typedef struct s_workshop {
+    linked_list_t *list_head;
     int next_id;
 } workshop_t;
 
