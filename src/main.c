@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2025
-** main
+** organized
 ** File description:
 ** Main of project
 */

@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2025
-** main
+** organized
 ** File description:
-** Main of project
+** Functions for hold the programm
 */
 
 #include "../include/my.h"
