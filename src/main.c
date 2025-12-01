@@ -11,4 +11,9 @@
 
 int main(void)
 {
+    workshop_t workshop_data = {NULL, 0};
+
+    if (workshop_shell(&workshop_data) == 84)
+        return 84;
+    return 0;
 }

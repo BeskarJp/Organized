@@ -8,6 +8,8 @@
 #ifndef ORGANIZED
     #define ORGANIZED
 
+    #include <stdio.h>
+
 typedef struct s_hardware {
     char *type;
     char *name;

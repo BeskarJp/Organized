@@ -40,7 +40,9 @@ SRC	=	$(PATH_LIBMY)my_compute_power_rec.c	\
 		$(PATH_LIBMY)my_strlen.c	\
 		$(PATH_LIBMY)my_strncat.c	\
 		$(PATH_LIBMY)my_strncpy.c	\
-		$(PATH_LIBMY)my_swap.c
+		$(PATH_LIBMY)my_swap.c	\
+		$(PATH_SRC)temp.c	\
+		$(PATH_SRC)main.c
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -49,7 +51,7 @@ NAME	=	organized
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	@$(CC) -o $(NAME) $(OBJ)
+	@$(CC) $(OBJ) -o $(NAME) -L. -lshell
 	@echo "Everything is compiled"
 
 clean:
