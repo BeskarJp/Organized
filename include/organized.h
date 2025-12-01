@@ -24,4 +24,6 @@ typedef struct s_workshop {
     int next_id;
 } workshop_t;
 
+void push_to_list(linked_list_t **begin, void *data);
+
 #endif /* ORGANIZED */
