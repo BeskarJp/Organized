@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2025
-** main
+** add
 ** File description:
-** Main of project
+** File for function add
 */
 
 #include "../include/my.h"

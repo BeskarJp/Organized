@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2025
-** my.h
+** organized.h
 ** File description:
-** Include of Lib
+** Include of project
 */
 
 #ifndef ORGANIZED
