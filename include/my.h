@@ -34,6 +34,7 @@ int my_str_isalpha(char c);
 char **my_str_to_word_array(const char *str);
 int my_strcmp(char const *s1, char const *s2);
 char *my_strcat(char *dest, char const *src);
+char *my_strchr(char *buffer, int need);
 char *my_strcpy(char *dest, char const *src);
 char my_strmcp(char const *str_one, char const *str_two, int nb);
 char *my_strdup(char const *src);

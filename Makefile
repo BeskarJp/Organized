@@ -34,6 +34,7 @@ SRC	=	$(PATH_LIBMY)my_compute_power_rec.c	\
 		$(PATH_LIBMY)my_str_isalpha.c	\
 		$(PATH_LIBMY)my_str_to_word_array.c	\
 		$(PATH_LIBMY)my_strcat.c	\
+		$(PATH_LIBMY)my_strchr.c	\
 		$(PATH_LIBMY)my_strcmp.c	\
 		$(PATH_LIBMY)my_strcpy.c	\
 		$(PATH_LIBMY)my_strdup.c	\
