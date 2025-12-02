@@ -29,14 +29,14 @@ int create_hw(workshop_t *shop, char *type, char *name)
     char *types[] = {
         "ACTUATOR", "DEVICE", "PROCESSOR", "SENSOR", "WIRE", NULL};
 
-    if (type_id == -1)
-        return 84;
     hw = malloc(sizeof(hardware_t));
     node = malloc(sizeof(linked_list_t));
-    if (!hw || !node || !(hw->name = my_strdup(name)))
+    hw->name = my_strdup(name);
+    if (!hw || !node || !hw->name || type_id == -1)
         return 84;
     hw->type = type_id;
-    hw->id = shop->next_id++;
+    hw->id = shop->next_id;
+    shop->next_id = shop->next_id + 1;
     node->data = hw;
     node->next = shop->list_head;
     shop->list_head = node;
