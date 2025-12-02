@@ -47,16 +47,14 @@ int create_hw(workshop_t *shop, char *type, char *name)
 int add(void *data, char **args)
 {
     workshop_t *shop = (workshop_t *)data;
-    int i = 0;
 
     if (!args || !args[0])
         return 84;
-    while (args[i] != NULL) {
+    for (int i = 0; args[i] != NULL; i += 2) {
         if (args[i + 1] == NULL)
             return 84;
         if (create_hw(shop, args[i], args[i + 1]) == 84)
             return 84;
-        i += 2;
     }
     return 0;
 }
