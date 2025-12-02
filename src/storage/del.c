@@ -20,6 +20,15 @@ void free_hw(hardware_t *hw)
     free(hw);
 }
 
+void dodge_codding_style(linked_list_t *prev, linked_list_t *curr,
+    workshop_t *shop)
+{
+    if (prev == NULL)
+        shop->list_head = curr->next;
+    else
+        prev->next = curr->next;
+}
+
 int del_node(workshop_t *shop, int id)
 {
     linked_list_t *curr = shop->list_head;
@@ -29,10 +38,7 @@ int del_node(workshop_t *shop, int id)
     while (curr != NULL) {
         hw = (hardware_t *)curr->data;
         if (hw->id == id) {
-            if (prev == NULL)
-                shop->list_head = curr->next;
-            else
-                prev->next = curr->next;
+            dodge_codding_style(prev, curr, shop);
             free_hw(hw);
             free(curr);
             return 0;
