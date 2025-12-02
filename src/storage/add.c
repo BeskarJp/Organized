@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2025
 ** add
 ** File description:
-** File for function add
+** File for function adding
 */
 
 #include "../../include/my.h"

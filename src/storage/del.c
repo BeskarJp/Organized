@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2025
-** add
+** del
 ** File description:
-** File for function add
+** File for function delete
 */
 
 #include "../../include/my.h"
