@@ -8,10 +8,20 @@
 #ifndef ORGANIZED
     #define ORGANIZED
 
+    #include <stdlib.h>
+
+typedef enum type {
+    ACTUATOR,
+    DEVICE,
+    PROCESSORS,
+    SENSORS,
+    WIRES
+} type_t;
+
 typedef struct s_hardware {
-    char *type;
     char *name;
     int id;
+    type_t type;
 } hardware_t;
 
 typedef struct s_linked_list {
