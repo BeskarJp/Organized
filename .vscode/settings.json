@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "my.h": "c",
+        "organized.h": "c",
+        "shell.h": "c"
+    }
+}
