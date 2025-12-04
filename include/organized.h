@@ -8,8 +8,6 @@
 #ifndef ORGANIZED
     #define ORGANIZED
 
-    #include <stdlib.h>
-
 typedef enum type {
     ACTUATOR,
     DEVICE,
