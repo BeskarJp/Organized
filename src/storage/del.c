@@ -9,15 +9,15 @@
 #include "../../include/organized.h"
 #include "../../include/shell.h"
 
-void free_hw(hardware_t *hw)
+void free_itm(hardware_t *itm)
 {
     char *types[] = {
         "ACTUATOR", "DEVICE", "PROCESSOR", "SENSOR", "WIRE", NULL};
 
     my_printf("%s n° %d - \"%s\" deleted.\n",
-        types[hw->type], hw->id, hw->name);
-    free(hw->name);
-    free(hw);
+        types[itm->type], itm->id, itm->name);
+    free(itm->name);
+    free(itm);
 }
 
 void dodge_codding_style(linked_list_t *prev, linked_list_t *curr,
@@ -33,13 +33,13 @@ int del_node(workshop_t *shop, int id)
 {
     linked_list_t *curr = shop->list_head;
     linked_list_t *prev = NULL;
-    hardware_t *hw;
+    hardware_t *itm;
 
     while (curr != NULL) {
-        hw = (hardware_t *)curr->data;
-        if (hw->id == id) {
+        itm = (hardware_t *)curr->data;
+        if (itm->id == id) {
             dodge_codding_style(prev, curr, shop);
-            free_hw(hw);
+            free_itm(itm);
             free(curr);
             return 0;
         }

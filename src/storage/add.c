@@ -21,26 +21,26 @@ int get_type_id(char *type)
     return -1;
 }
 
-int create_hw(workshop_t *shop, char *type, char *name)
+int create_itm(workshop_t *shop, char *type, char *name)
 {
-    hardware_t *hw;
+    hardware_t *itm;
     linked_list_t *node;
     int type_id = get_type_id(type);
     char *types[] = {
         "ACTUATOR", "DEVICE", "PROCESSOR", "SENSOR", "WIRE", NULL};
 
-    hw = malloc(sizeof(hardware_t));
+    itm = malloc(sizeof(hardware_t));
     node = malloc(sizeof(linked_list_t));
-    hw->name = my_strdup(name);
-    if (!hw || !node || !hw->name || type_id == -1)
+    itm->name = my_strdup(name);
+    if (!itm || !node || !itm->name || type_id == -1)
         return 84;
-    hw->type = type_id;
-    hw->id = shop->next_id;
+    itm->type = type_id;
+    itm->id = shop->next_id;
     shop->next_id = shop->next_id + 1;
-    node->data = hw;
+    node->data = itm;
     node->next = shop->list_head;
     shop->list_head = node;
-    my_printf("%s n°%d - \"%s\" added.\n", types[type_id], hw->id, hw->name);
+    my_printf("%s n°%d - \"%s\" added.\n", types[type_id], itm->id, itm->name);
     return 0;
 }
 
@@ -53,7 +53,7 @@ int add(void *data, char **args)
     for (int i = 0; args[i] != NULL; i += 2) {
         if (args[i + 1] == NULL)
             return 84;
-        if (create_hw(shop, args[i], args[i + 1]) == 84)
+        if (create_itm(shop, args[i], args[i + 1]) == 84)
             return 84;
     }
     return 0;

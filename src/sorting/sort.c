@@ -9,7 +9,7 @@
 #include "../../include/organized.h"
 #include "../../include/shell.h"
 
-static void init_infos(sort_info_t *infos)
+static void initialize_struct_infos(sort_info_t *infos)
 {
     for (int i = 0; i < 4; i++) {
         infos[i].type = UNKNOWN;
@@ -17,17 +17,17 @@ static void init_infos(sort_info_t *infos)
     }
 }
 
-int set_criteria(char *arg, sort_info_t *infos, int idx)
+int set_criteria(char *token, sort_info_t *infos, int idx)
 {
-    if (my_strcmp(arg, "TYPE") == 0) {
+    if (my_strcmp(token, "TYPE") == 0) {
         infos[idx].type = TYPE;
         return 0;
     }
-    if (my_strcmp(arg, "NAME") == 0) {
+    if (my_strcmp(token, "NAME") == 0) {
         infos[idx].type = NAME;
         return 0;
     }
-    if (my_strcmp(arg, "ID") == 0) {
+    if (my_strcmp(token, "ID") == 0) {
         infos[idx].type = ID;
         return 0;
     }
@@ -42,26 +42,26 @@ int handle_reverse(sort_info_t *infos, int idx)
     return 0;
 }
 
-int handle_criterion(char *arg, sort_info_t *infos, int *idx)
+int handle_criterion(char *token, sort_info_t *infos, int *idx)
 {
     if (*idx >= 3)
         return 84;
-    if (set_criteria(arg, infos, *idx) == 84)
+    if (set_criteria(token, infos, *idx) == 84)
         return 84;
     (*idx)++;
     return 0;
 }
 
-int parse_args(char **args, sort_info_t *infos)
+int parse_token(char **token, sort_info_t *infos)
 {
     int idx = 0;
     int error = 0;
 
-    for (int i = 0; args[i] != NULL; i++) {
-        if (my_strcmp(args[i], "-r") == 0)
+    for (int i = 0; token[i] != NULL; i++) {
+        if (my_strcmp(token[i], "-r") == 0)
             error = handle_reverse(infos, idx);
         else
-            error = handle_criterion(args[i], infos, &idx);
+            error = handle_criterion(token[i], infos, &idx);
         if (error == 84)
             return 84;
     }
@@ -70,15 +70,15 @@ int parse_args(char **args, sort_info_t *infos)
     return 0;
 }
 
-int sort(void *data, char **args)
+int sort(void *data, char **token)
 {
     workshop_t *shop = (workshop_t *)data;
     sort_info_t infos[4];
 
-    if (!args || !args[0])
+    if (!token || !token[0])
         return 84;
-    init_infos(infos);
-    if (parse_args(args, infos) == 84)
+    initialize_struct_infos(infos);
+    if (parse_token(token, infos) == 84)
         return 84;
     bubble_sort(shop->list_head, infos);
     return 0;
