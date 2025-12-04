@@ -18,6 +18,13 @@ typedef enum type {
     WIRES
 } type_t;
 
+typedef enum s_sort_type {
+    TYPE,
+    NAME,
+    ID,
+    UNKNOWN
+} sort_type_t;
+
 typedef struct s_hardware {
     char *name;
     int id;
@@ -34,13 +41,11 @@ typedef struct s_workshop {
     int next_id;
 } workshop_t;
 
-typedef struct s_sort_tag {
-    int (*cmp)(hardware_t *, hardware_t *, int);
-    int reverse;
-} sort_tag_t;
+typedef struct s_sort_info {
+    sort_type_t type;
+    int is_reverse;
+} sort_info_t;
 
-int compare_name(hardware_t *a, hardware_t *b, int reverse);
-int compare_type(hardware_t *a, hardware_t *b, int reverse);
-int compare_id(hardware_t *a, hardware_t *b, int reverse);
+void bubble_sort(linked_list_t *list, sort_info_t *infos);
 
 #endif /* ORGANIZED */
