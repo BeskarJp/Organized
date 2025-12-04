@@ -8,6 +8,8 @@
 #ifndef ORGANIZED
     #define ORGANIZED
 
+    #include <stdlib.h>
+
 typedef enum type {
     ACTUATOR,
     DEVICE,
@@ -45,5 +47,6 @@ typedef struct s_sort_info {
 } sort_info_t;
 
 void bubble_sort(linked_list_t *list, sort_info_t *infos);
+void free_workshop_data(workshop_t *shop);
 
 #endif /* ORGANIZED */

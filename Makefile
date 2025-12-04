@@ -47,6 +47,7 @@ SRC	=	$(PATH_LIBMY)my_compute_power_rec.c	\
 		$(PATH_SRC)storage/add.c	\
 		$(PATH_SRC)storage/del.c	\
 		$(PATH_SRC)storage/disp.c	\
+		$(PATH_SRC)clean.c	\
 		$(PATH_SRC)main.c
 
 OBJ	=	$(SRC:.c=.o)

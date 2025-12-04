@@ -46,7 +46,7 @@ int del_node(workshop_t *shop, int id)
         prev = curr;
         curr = curr->next;
     }
-    return 0;
+    return 84;
 }
 
 int is_digit(char *str)
@@ -69,7 +69,8 @@ int del(void *data, char **args)
         if (!is_digit(args[i]))
             return 84;
         id = my_getnbr(args[i]);
-        del_node(shop, id);
+        if (del_node(shop, id) == 84)
+            return 84;
     }
     return 0;
 }
