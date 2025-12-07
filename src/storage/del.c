@@ -14,7 +14,7 @@ void free_itm(hardware_t *itm)
     char *types[] = {
         "ACTUATOR", "DEVICE", "PROCESSOR", "SENSOR", "WIRE", NULL};
 
-    my_printf("%s n° %d - \"%s\" deleted.\n",
+    my_printf("%s n°%d - \"%s\" deleted.\n",
         types[itm->type], itm->id, itm->name);
     free(itm->name);
     free(itm);
@@ -55,7 +55,7 @@ int is_digit(char *str)
         if (str[i] < '0' || str[i] > '9')
             return 0;
     }
-    return 84;
+    return 1;
 }
 
 int del(void *data, char **args)
