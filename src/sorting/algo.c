@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2025
 ** algo
 ** File description:
-** File for the algorithm
+** Quick sort algorithm
 */
 
 #include "../../include/my.h"
