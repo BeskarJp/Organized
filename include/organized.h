@@ -46,7 +46,7 @@ typedef struct s_sort_info {
     int is_reverse;
 } sort_info_t;
 
-void bubble_sort(linked_list_t *list, sort_info_t *infos);
+void quick_sort(linked_list_t *list, sort_info_t *infos);
 void free_workshop_data(workshop_t *shop);
 
 #endif /* ORGANIZED */

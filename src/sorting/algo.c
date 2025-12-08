@@ -45,27 +45,47 @@ void swap_data(linked_list_t *item_one, linked_list_t *item_two)
     item_two->data = temp;
 }
 
-int bubble_sort_pass(linked_list_t *list, sort_info_t *infos)
+static linked_list_t *partition(linked_list_t *low, linked_list_t *high,
+    sort_info_t *infos)
 {
-    linked_list_t *curr = list;
-    int swapped = 0;
+    hardware_t *pivot = (hardware_t *)high->data;
+    linked_list_t *i = low;
+    linked_list_t *j = low;
 
-    while (curr->next != NULL) {
-        if (should_swap(curr->data, curr->next->data, infos)) {
-            swap_data(curr, curr->next);
-            swapped = 1;
+    while (j != high && j != NULL) {
+        if (should_swap(pivot, (hardware_t *)j->data, infos)) {
+            swap_data(i, j);
+            i = i->next;
         }
-        curr = curr->next;
+        j = j->next;
     }
-    return swapped;
+    swap_data(i, high);
+    return (i);
 }
 
-void bubble_sort(linked_list_t *list, sort_info_t *infos)
+void quick_sort_recursive(linked_list_t *low, linked_list_t *high,
+    sort_info_t *infos)
 {
-    int swapped = 1;
+    linked_list_t *p;
+    linked_list_t *curr;
 
-    if (!list)
+    if (high != NULL && low != high && low != high->next) {
+        p = partition(low, high, infos);
+        curr = low;
+        while (curr != NULL && curr->next != p)
+            curr = curr->next;
+        quick_sort_recursive(low, curr, infos);
+        quick_sort_recursive(p->next, high, infos);
+    }
+}
+
+void quick_sort(linked_list_t *list, sort_info_t *infos)
+{
+    linked_list_t *last = list;
+
+    if (!list || !list->next)
         return;
-    while (swapped)
-        swapped = bubble_sort_pass(list, infos);
+    while (last->next != NULL)
+        last = last->next;
+    quick_sort_recursive(list, last, infos);
 }

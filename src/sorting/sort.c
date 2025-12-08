@@ -80,6 +80,6 @@ int sort(void *data, char **token)
     initialize_struct_infos(infos);
     if (parse_token(token, infos) == 84)
         return 84;
-    bubble_sort(shop->list_head, infos);
+    quick_sort(shop->list_head, infos);
     return 0;
 }
