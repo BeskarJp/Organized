@@ -21,7 +21,7 @@ int get_type_id(char *type)
     return -1;
 }
 
-int create_itm(workshop_t *shop, char *type, char *name)
+int create_item(workshop_t *shop, char *type, char *name)
 {
     hardware_t *item = malloc(sizeof(hardware_t));
     linked_list_t *node = malloc(sizeof(linked_list_t));
@@ -51,7 +51,7 @@ int add(void *data, char **args)
     for (int i = 0; args[i] != NULL; i += 2) {
         if (args[i + 1] == NULL)
             return 84;
-        if (create_itm(shop, args[i], args[i + 1]) == 84)
+        if (create_item(shop, args[i], args[i + 1]) == 84)
             return 84;
     }
     return 0;
