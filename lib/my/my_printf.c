@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2025
-** my_printf
+** print
 ** File description:
 ** main file
 */
@@ -104,7 +104,7 @@ static void follow_percent(char nxt_c, va_list list, int *count)
     }
 }
 
-int my_printf(const char *format, ...)
+int print(const char *format, ...)
 {
     va_list list;
     int i = 0;

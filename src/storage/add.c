@@ -23,24 +23,22 @@ int get_type_id(char *type)
 
 int create_itm(workshop_t *shop, char *type, char *name)
 {
-    hardware_t *itm;
-    linked_list_t *node;
+    hardware_t *item = malloc(sizeof(hardware_t));
+    linked_list_t *node = malloc(sizeof(linked_list_t));
     int type_id = get_type_id(type);
     char *types[] = {
         "ACTUATOR", "DEVICE", "PROCESSOR", "SENSOR", "WIRE", NULL};
 
-    itm = malloc(sizeof(hardware_t));
-    node = malloc(sizeof(linked_list_t));
-    itm->name = my_strdup(name);
-    if (!itm || !node || !itm->name || type_id == -1)
+    item->name = my_strdup(name);
+    if (!item || !node || !item->name || type_id == -1)
         return 84;
-    itm->type = type_id;
-    itm->id = shop->next_id;
+    item->type = type_id;
+    item->id = shop->next_id;
     shop->next_id = shop->next_id + 1;
-    node->data = itm;
+    node->data = item;
     node->next = shop->list_head;
     shop->list_head = node;
-    my_printf("%s n°%d - \"%s\" added.\n", types[type_id], itm->id, itm->name);
+    print("%s n°%d - \"%s\" added.\n", types[type_id], item->id, item->name);
     return 0;
 }
 

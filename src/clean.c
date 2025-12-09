@@ -13,13 +13,13 @@ void free_workshop_data(workshop_t *shop)
 {
     linked_list_t *curr = shop->list_head;
     linked_list_t *next_node;
-    hardware_t *itm;
+    hardware_t *item;
 
     while (curr != NULL) {
         next_node = curr->next;
-        itm = (hardware_t *)curr->data;
-        free(itm->name);
-        free(itm);
+        item = (hardware_t *)curr->data;
+        free(item->name);
+        free(item);
         free(curr);
         curr = next_node;
     }

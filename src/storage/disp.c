@@ -13,14 +13,14 @@ int disp(void *data, char **args)
 {
     workshop_t *shop = (workshop_t *)data;
     linked_list_t *curr = shop->list_head;
-    hardware_t *itm;
+    hardware_t *item;
     char *types[] = {
         "ACTUATOR", "DEVICE", "PROCESSOR", "SENSOR", "WIRE", NULL};
 
     (void)args;
     while (curr != NULL) {
-        itm = (hardware_t *)curr->data;
-        my_printf("%s n°%d - \"%s\"\n", types[itm->type], itm->id, itm->name);
+        item = (hardware_t *)curr->data;
+        print("%s n°%d - \"%s\"\n", types[item->type], item->id, item->name);
         curr = curr->next;
     }
     return 0;

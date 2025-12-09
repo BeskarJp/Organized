@@ -50,18 +50,18 @@ static linked_list_t *partition_list(linked_list_t *start_node,
     linked_list_t *pivot_node, sort_info_t *infos)
 {
     hardware_t *pivot = (hardware_t *)pivot_node->data;
-    linked_list_t *i = start_node;
-    linked_list_t *j = start_node;
+    linked_list_t *store = start_node;
+    linked_list_t *current = start_node;
 
-    while (j != pivot_node && j != NULL) {
-        if (should_swap_items(pivot, (hardware_t *)j->data, infos)) {
-            swap_data(i, j);
-            i = i->next;
+    while (current != pivot_node && current != NULL) {
+        if (should_swap_items(pivot, (hardware_t *)current->data, infos)) {
+            swap_data(store, current);
+            store = store->next;
         }
-        j = j->next;
+        current = current->next;
     }
-    swap_data(i, pivot_node);
-    return (i);
+    swap_data(store, pivot_node);
+    return (store);
 }
 
 void quick_sort_recursive(linked_list_t *start_node, linked_list_t *end_node,

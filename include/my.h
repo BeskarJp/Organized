@@ -52,6 +52,6 @@ int my_put_ieee(double nb, int cap);
 int my_put_nbr_uint(unsigned int nb);
 int my_put_oct(unsigned nb);
 int my_put_pointer(unsigned long nb);
-int my_printf(const char *format, ...);
+int print(const char *format, ...);
 
 #endif /* MY */
