@@ -9,6 +9,14 @@
 #include "../include/organized.h"
 #include "../include/shell.h"
 
+/**
+ * @brief Frees all dynamically allocated memory
+ *
+ * Explore the linked list, freeing the item name, the item structure,
+ * and the list node for all entries.
+ *
+ * @param shop
+ */
 void free_workshop_data(workshop_t *shop)
 {
     linked_list_t *curr = shop->list_head;

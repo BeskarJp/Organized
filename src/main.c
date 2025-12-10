@@ -9,6 +9,14 @@
 #include "../include/organized.h"
 #include "../include/shell.h"
 
+/**
+ * @brief Main entry point of the program.
+ *
+ * Initializes the workshop data structure and launches the shell
+ * with workshop_shell
+ *
+ * @return int
+ */
 int main(void)
 {
     workshop_t workshop_data = {NULL, 0};

@@ -9,6 +9,16 @@
 #include "../../include/organized.h"
 #include "../../include/shell.h"
 
+/**
+ * @brief Displays the list of all hardware items in the workshop
+ *
+ * This function analyze the linked list of hardware items
+ * and prints the type, ID, and name of each item
+ *
+ * @param data
+ * @param args
+ * @return int
+ */
 int disp(void *data, char **args)
 {
     workshop_t *shop = (workshop_t *)data;
