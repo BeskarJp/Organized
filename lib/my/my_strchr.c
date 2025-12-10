@@ -5,7 +5,7 @@
 ** Find the first occurrence of a character
 */
 
-#include "../../include/my.h"
+#include "my.h"
 
 char *my_strchr(char *buffer, int need)
 {

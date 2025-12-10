@@ -5,7 +5,7 @@
 ** display pointer in hexa
 */
 
-#include "../../include/my.h"
+#include "my.h"
 
 static int my_put_pointer_hex(unsigned long nb, int *count)
 {

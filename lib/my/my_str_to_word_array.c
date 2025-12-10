@@ -5,7 +5,7 @@
 ** Most important function
 */
 
-#include "../../include/my.h"
+#include "my.h"
 #include <stdio.h>
 
 int count_words_in_output(char const *str)

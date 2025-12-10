@@ -5,9 +5,9 @@
 ** Quick sort algorithm
 */
 
-#include "../../include/my.h"
-#include "../../include/organized.h"
-#include "../../include/shell.h"
+#include "my.h"
+#include "organized.h"
+#include "shell.h"
 
 int cmp_vals(hardware_t *first_item, hardware_t *sec_item, sort_info_t *infos)
 {

@@ -5,7 +5,7 @@
 ** is that number inf ?
 */
 
-#include "../../include/my.h"
+#include "my.h"
 
 int my_isinf(double nb)
 {

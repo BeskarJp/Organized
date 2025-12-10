@@ -5,7 +5,7 @@
 ** print double -> ieee
 */
 
-#include "../../include/my.h"
+#include "my.h"
 
 static void is_capital(int cap, ieee754_t *ieee)
 {

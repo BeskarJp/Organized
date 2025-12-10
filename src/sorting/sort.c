@@ -5,9 +5,9 @@
 ** File for function sorting stuff
 */
 
-#include "../../include/my.h"
-#include "../../include/organized.h"
-#include "../../include/shell.h"
+#include "my.h"
+#include "organized.h"
+#include "shell.h"
 
 static void initialize_struct_infos(sort_info_t *infos)
 {

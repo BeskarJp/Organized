@@ -5,7 +5,7 @@
 ** Fonction which is doing an unsigned int
 */
 
-#include "../../include/my.h"
+#include "my.h"
 
 int my_put_nbr_uint(unsigned int nb)
 {

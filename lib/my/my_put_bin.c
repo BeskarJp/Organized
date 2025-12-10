@@ -5,7 +5,7 @@
 ** put bin
 */
 
-#include "../../include/my.h"
+#include "my.h"
 
 void is_capital_bin(int cap, char **prefix)
 {

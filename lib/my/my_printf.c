@@ -6,7 +6,7 @@
 */
 
 #include <stdarg.h>
-#include "../../include/my.h"
+#include "my.h"
 
 static void follow_percent_nb_four(char nxt_c, va_list list, int *count)
 {

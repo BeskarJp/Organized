@@ -5,7 +5,7 @@
 ** Flag %e for sci number
 */
 
-#include "../../include/my.h"
+#include "my.h"
 
 static int go_to_coma(double *nb)
 {

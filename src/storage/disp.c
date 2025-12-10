@@ -5,9 +5,9 @@
 ** File for function display
 */
 
-#include "../../include/my.h"
-#include "../../include/organized.h"
-#include "../../include/shell.h"
+#include "my.h"
+#include "organized.h"
+#include "shell.h"
 
 /**
  * @brief Displays the list of all hardware items in the workshop

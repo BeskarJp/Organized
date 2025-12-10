@@ -5,9 +5,9 @@
 ** Main of project
 */
 
-#include "../include/my.h"
-#include "../include/organized.h"
-#include "../include/shell.h"
+#include "my.h"
+#include "organized.h"
+#include "shell.h"
 
 /**
  * @brief Frees all dynamically allocated memory

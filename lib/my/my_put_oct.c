@@ -5,7 +5,7 @@
 ** pas d'inspi
 */
 
-#include "../../include/my.h"
+#include "my.h"
 #include <stdio.h>
 
 int my_put_oct(unsigned nb)

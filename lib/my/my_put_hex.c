@@ -5,7 +5,7 @@
 ** put hex
 */
 
-#include "../../include/my.h"
+#include "my.h"
 
 int my_put_hex(unsigned nb, int cap)
 {

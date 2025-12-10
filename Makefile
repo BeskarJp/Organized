@@ -7,7 +7,7 @@
 
 CC = 	epiclang
 
-CFLAGS	= -Wall -Wextra
+CFLAGS	= -Wall -Wextra -I./include
 
 PATH_LIBMY	= lib/my/
 

@@ -5,7 +5,7 @@
 ** print a float
 */
 
-#include "../../include/my.h"
+#include "my.h"
 
 static int special_condition(double nb, int *count, int cap)
 {
