@@ -9,6 +9,15 @@
 #include "organized.h"
 #include "shell.h"
 
+/**
+ * @brief Get the type id object and ID
+ *
+ * Compares the type string in command with the list of valid types
+ * and returns his index.
+ *
+ * @param type
+ * @return int
+ */
 int get_type_id(char *type)
 {
     char *types[] = {
@@ -21,6 +30,17 @@ int get_type_id(char *type)
     return -1;
 }
 
+/**
+ * @brief Create a new hardware item and insert to the workshop list.
+ *
+ * Allocates and initializes hardware struct and linked list node.
+ * The new item is inserted at the beginning of the workshop list.
+ *
+ * @param shop
+ * @param type
+ * @param name
+ * @return int
+ */
 int create_item(workshop_t *shop, char *type, char *name)
 {
     hardware_t *item = malloc(sizeof(hardware_t));
@@ -42,6 +62,15 @@ int create_item(workshop_t *shop, char *type, char *name)
     return 0;
 }
 
+/**
+ * @brief Adding new hardware items with his type and ID.
+ *
+ * Reads arguments in two (type and name) and pushes the item to workshop.
+ *
+ * @param data
+ * @param args
+ * @return int
+ */
 int add(void *data, char **args)
 {
     workshop_t *shop = (workshop_t *)data;

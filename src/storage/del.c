@@ -9,6 +9,13 @@
 #include "organized.h"
 #include "shell.h"
 
+/**
+ * @brief Free a hardware item and print del message.
+ *
+ * Frees the memory allocated for the hardware element's name and structure
+ *
+ * @param item
+ */
 void free_itm(hardware_t *item)
 {
     char *types[] = {
@@ -20,7 +27,17 @@ void free_itm(hardware_t *item)
     free(item);
 }
 
-void dodge_codding_style(linked_list_t *prev, linked_list_t *curr,
+/**
+ * @brief Remove node from the linked list.
+ *
+ * Updates the workshop list head or the previous link to bypass
+ * the node being deleted.
+ *
+ * @param prev
+ * @param curr
+ * @param shop
+ */
+void check_null(linked_list_t *prev, linked_list_t *curr,
     workshop_t *shop)
 {
     if (prev == NULL)
@@ -29,6 +46,16 @@ void dodge_codding_style(linked_list_t *prev, linked_list_t *curr,
         prev->next = curr->next;
 }
 
+/**
+ * @brief Delete hardware node from the workshop using his ID.
+ *
+ * Check workshop list to find the true hardware item.
+ * If found, the item and node are freed.
+ *
+ * @param shop
+ * @param id
+ * @return int
+ */
 int del_node(workshop_t *shop, int id)
 {
     linked_list_t *curr = shop->list_head;
@@ -38,7 +65,7 @@ int del_node(workshop_t *shop, int id)
     while (curr != NULL) {
         item = (hardware_t *)curr->data;
         if (item->id == id) {
-            dodge_codding_style(prev, curr, shop);
+            check_null(prev, curr, shop);
             free_itm(item);
             free(curr);
             return 0;
@@ -49,6 +76,12 @@ int del_node(workshop_t *shop, int id)
     return 84;
 }
 
+/**
+ * @brief Check if a string contains only digits.
+ *
+ * @param str
+ * @return int
+ */
 int is_digit(char *str)
 {
     for (int i = 0; str[i]; i++) {
@@ -58,6 +91,15 @@ int is_digit(char *str)
     return 1;
 }
 
+/**
+ * @brief Check all arguments and remove matching items.
+ *
+ * Take arguments to an ID and deletes the corresponding node.
+ *
+ * @param data
+ * @param args
+ * @return int
+ */
 int del(void *data, char **args)
 {
     workshop_t *shop = (workshop_t *)data;
