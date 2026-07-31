@@ -5,7 +5,7 @@
 ## Makefile of project
 ##
 
-CC = 	epiclang
+CC = 	gcc
 
 CFLAGS	= -Wall -Wextra -I./include
 

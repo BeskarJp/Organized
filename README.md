@@ -1,48 +1,43 @@
-# 🧩 ./organized  
+# 🧩 Organized - Robotics Inventory Manager
 
-**organized** est un projet pour gérer et trier dynamiquement du matériel de laboratoire robotique via shell.  
+## 📝 Présentation
+**Organized** est un projet de première année à **Epitech** consistant à développer un système de gestion et de tri dynamique de matériel de laboratoire robotique via un shell interactif. 
 
-Ce projet met l'accent sur la manipulation de **listes chaînées**, la **gestion rigoureuse de la mémoire** et l'implémentation d'**algorithmes de tri multi-critères**.  
+Le projet met l'accent sur la manipulation avancée de **listes chaînées**, une **gestion rigoureuse de la mémoire** (zéro fuite mémoire acceptée) et l'implémentation d'un moteur de **tri multi-critères** performant.
 
+---
 
+## 📘 Gestion du Matériel
+Le programme permet d'organiser cinq catégories distinctes de composants. Chaque matériel ajouté reçoit un **ID unique** incrémenté automatiquement :
 
-## 📘 Objectif du projet  
+* **Actuators :** Boutons, leviers, servomoteurs...
+* **Devices :** Radios, enregistreurs, contrôleurs...
+* **Processors :** Puces Intel, AMD, ARM...
+* **Sensors :** Capteurs de mouvement, thermiques, laser...
+* **Wires :** Câbles USB, HDMI, nappes...
 
-L'objectif est de créer un système de gestion de stocks capable d'organiser cinq types de matériels :  
-- **Actuators** : boutons, leviers...  
-- **Devices** : radios, enregistreurs...  
-- **Processors** : puces Intel, AMD...  
-- **Sensors** : capteurs de mouvement, thermiques...  
-- **Wires** : câbles USB, HDMI...  
+---
 
-Le programme attribue un identifiant (ID) unique à chaque matériel ajouté et permet de les supprimer, de les afficher ou de les trier par **TYPE**, **NAME** ou **ID** (croissant ou décroissant).  
+## ⚙️ Commandes du Shell
 
+Le programme interprète des commandes spécifiques pour manipuler la liste d'objets en temps réel.
 
+### Interactions & Syntaxe
+| Commande | Paramètres | Action |
+| :--- | :--- | :--- |
+| **`add`** | `<TYPE> <NAME>` | Ajoute un ou plusieurs matériels à l'inventaire. |
+| **`del`** | `<ID>` | Supprime un ou plusieurs matériels via leur identifiant. |
+| **`disp`** | *(aucun)* | Affiche l'intégralité du matériel présent dans la liste. |
+| **`sort`** | `<TAG> [-r]` | Trie la liste par **TYPE**, **NAME** ou **ID**. |
 
-## ⚙️ Commandes du Shell  
+> [!TIP]
+> **Tri multi-critères :** Vous pouvez combiner jusqu'à 3 critères (ex: `sort TYPE NAME -r ID`). Le flag `-r` inverse l'ordre du critère qui le précède.
 
-### `add <TYPE> <NAME>`
-Ajoute un ou plusieurs matériels à la liste.  
-- Affiche : `TYPE n°ID - "NAME" added.`  
+---
 
-### `del <ID>`
-Supprime un ou plusieurs matériels de la liste via leur identifiant.  
-- Affiche : `TYPE n°ID - "NAME" deleted.`  
+## 🔨 Exemples d'utilisation
 
-### `disp`
-Affiche l'intégralité du matériel présent dans l'atelier, dans l'ordre actuel de la liste.  
-
-### `sort <TAG> [-r]`
-Trie la liste selon un ou plusieurs critères (jusqu'à 3).  
-- **TAGS** : `TYPE`, `NAME`, `ID`.  
-- **-r** : Inverse l'ordre du critère précédent.  
-
-
-
-## 🔨 Exemples d'utilisations
-
-### Ajout et Affichage
-
+### Ajout et Affichage rapide
 ```bash
 $> ./organized
 Workshop >> add WIRE usb, ACTUATOR button, DEVICE recorder
@@ -53,3 +48,20 @@ Workshop >> disp
 DEVICE n°2 - "recorder"
 ACTUATOR n°1 - "button"
 WIRE n°0 - "usb"
+```
+
+---
+
+## 🛠️ Spécifications Techniques
+
+**Langage :** C
+
+**Binary pour le lancement :** ./organized
+
+**Structure de données :** Listes chaînées dynamiques.
+
+**Algorithmes :** Tri multi-critères stable (Type, Name, ID).
+
+**Gestion mémoire :** Nettoyage complet de la mémoire à la fermeture (Valgrind-friendly).
+
+**Compilation :** Via Makefile (rules: all, clean, fclean, re).

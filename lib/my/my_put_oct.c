@@ -13,10 +13,6 @@ int my_put_oct(unsigned nb)
     char *hex_chars = "01234567";
     int count = 0;
 
-    if (nb < 0) {
-        nb = -nb;
-        count += my_putchar('-');
-    }
     if (nb >= 8) {
         count += my_put_oct(nb / 8);
     }

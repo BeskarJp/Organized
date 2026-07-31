@@ -29,11 +29,6 @@ int my_put_bin(unsigned nb, int cap, int alt)
         count += my_putchar('0');
         return count;
     }
-    if (nb < 0) {
-        nb = -nb;
-        my_putchar('-');
-        count++;
-    }
     if (nb >= 2)
         count += my_put_bin(nb / 2, cap, alt);
     count += my_putchar(bin_chars[nb % 2]);
