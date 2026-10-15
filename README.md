@@ -1,13 +1,13 @@
-# 🧩 Organized - Robotics Inventory Manager
+# Organized - Robotics Inventory Manager
 
-## 📝 Présentation
+## Présentation
 **Organized** est un projet de première année à **Epitech** consistant à développer un système de gestion et de tri dynamique de matériel de laboratoire robotique via un shell interactif. 
 
 Le projet met l'accent sur la manipulation avancée de **listes chaînées**, une **gestion rigoureuse de la mémoire** (zéro fuite mémoire acceptée) et l'implémentation d'un moteur de **tri multi-critères** performant.
 
 ---
 
-## 📘 Gestion du Matériel
+## Gestion du Matériel
 Le programme permet d'organiser cinq catégories distinctes de composants. Chaque matériel ajouté reçoit un **ID unique** incrémenté automatiquement :
 
 * **Actuators :** Boutons, leviers, servomoteurs...
@@ -18,7 +18,7 @@ Le programme permet d'organiser cinq catégories distinctes de composants. Chaqu
 
 ---
 
-## ⚙️ Commandes du Shell
+## Commandes du Shell
 
 Le programme interprète des commandes spécifiques pour manipuler la liste d'objets en temps réel.
 
@@ -35,7 +35,7 @@ Le programme interprète des commandes spécifiques pour manipuler la liste d'ob
 
 ---
 
-## 🔨 Exemples d'utilisation
+## Exemples d'utilisation
 
 ### Ajout et Affichage rapide
 ```bash
@@ -52,7 +52,7 @@ WIRE n°0 - "usb"
 
 ---
 
-## 🛠️ Spécifications Techniques
+## Spécifications Techniques
 
 **Langage :** C
 
